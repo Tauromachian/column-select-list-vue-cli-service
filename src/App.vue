@@ -1,28 +1,43 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app>
+    <column-select-list :columns="columnDefs" v-model="visibleColumns"></column-select-list>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ColumnSelectList from "./components/ColumnSelectList";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
-</script>
+    ColumnSelectList
+  },
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+  data: () => ({
+    columnDefs: [
+      {
+        headerName: "Servicio",
+        field: "service",
+        checkboxSelection: true
+      },
+      {
+        headerName: "CRF",
+        field: "clientCode"
+      },
+      {
+        headerName: "Codigo",
+        field: "price"
+      },
+      {
+        headerName: "Codigo1",
+        field: "price1"
+      },
+      {
+        headerName: "Codigo2",
+        field: "price2"
+      }
+    ],
+    visibleColumns: []
+  })
+};
+</script>
