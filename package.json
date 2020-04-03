@@ -1,15 +1,28 @@
 {
   "name": "column-select-list-vue-cli-service",
   "version": "0.1.0",
+  "main": "dist/column-select-list-vue-cli-service.common.js",
+  "module": "dist/column-select-list-vue-cli-service.common.js",
+  "unpkg": "dist/column-select-list-vue-cli-service.umd.min.js",
+  "browser": {
+    "./sfc": "src/ColumnSelectList.vue"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build --target lib src/wrapper.js",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "core-js": "^3.6.4",
-    "vue": "^2.6.11"
+    "vue": "^2.6.11",
+    "@mdi/font": "^5.0.45",
+    "vuetify": "^2.2.11",
+    "vuetify-loader": "^1.3.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.2.0",
@@ -18,6 +31,9 @@
     "babel-eslint": "^10.0.3",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.1.2",
+    "sass": "^1.19.0",
+    "sass-loader": "^8.0.0",
+    "vue-cli-plugin-vuetify": "^2.0.5",
     "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {
